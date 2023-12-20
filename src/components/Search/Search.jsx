@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Search.module.css";
-import {ReactComponent as SearchIcon} from "../../../assets/Search icon.svg";
+import {ReactComponent as SearchIcon} from "../../assets/Search icon.svg";
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Merriweather&family=Roboto:ital,wght@1,300&display=swap');
 </style>
