@@ -20,7 +20,7 @@ function AlbumSection() {
     useEffect(() => {
         const fetchAlbumData = async () => {
             try {
-                const req = await fetch("https://qtify-backend-labs.crio.do/albums/top");
+                const req = await fetch("https://qtify-backend-labs.crio.do/albums/new");
                 let request = await req.json();
                 console.log(request);
                 setAlbum(request);
