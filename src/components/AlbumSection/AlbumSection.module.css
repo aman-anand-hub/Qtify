@@ -1,0 +1,17 @@
+.container {
+    height: 529px;
+    width: calc(100vw - 62px);
+    position: absolute;
+    left: 24px;
+    top: 368px;
+    background-color: var(--color--black);
+    display: flex;
+    flex-direction: column;
+}
+
+.temp {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto; 
+    gap: 32px;
+}

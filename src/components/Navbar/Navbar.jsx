@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Navbar.module.css";
-import {ReactComponent as AppIcon } from "../../assets/AppIcon.svg";
+import AppIcon from "../Logo/Logo.jsx";
 import Search from "../Search/Search.jsx";
 import Button from "../Button/Button.jsx";
 

@@ -1,0 +1,27 @@
+.heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.headingdiv {
+    height: 30px;
+    width: max-content;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.heading1 {
+    color: var(--color--white);
+    font-size: 20px;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    word-break: none;
+}
+
+.heading2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color--primary);
+    font-family: "Poppins", sans-serif;
+}
