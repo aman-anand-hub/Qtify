@@ -9,54 +9,50 @@
 import React, {useState, useEffect} from "react";
 import styles from "./AlbumSection.module.css";
 import AlbumSectionHeader from "../AlbumSectionHeader/AlbumSectionHeader.jsx";
-import Card from "../Card/Card.jsx";
+import GridOfCards from "../GridOfCards/GridOfCards.jsx";
 
 
 function AlbumSection() {
 
-    const [album, setAlbum]= useState([]);
-    // const [showAll, setShowAll]= useState(true);
+    const [newAlbum, setNewAlbum]= useState([]);
+    const [topAlbum, setTopAlbum]= useState([]);
 
     useEffect(() => {
-        const fetchAlbumData = async () => {
+        const fetchNewAlbumData = async () => {
             try {
                 const req = await fetch("https://qtify-backend-labs.crio.do/albums/new");
                 let request = await req.json();
                 console.log(request);
-                setAlbum(request);
+                setNewAlbum(request);
             } catch (error) {
                 console.log("Error fetching the albums", error); // Corrected error logging
             }
         }
 
-        fetchAlbumData();
+        const fetchTopAlbumData = async () => {
+            try {
+                const req = await fetch("https://qtify-backend-labs.crio.do/albums/top");
+                let request = await req.json();
+                console.log(request);
+                setTopAlbum(request);
+            } catch (error) {
+                console.log("Error fetching the albums", error); // Corrected error logging
+            }
+        }
+
+        fetchNewAlbumData();
+        fetchTopAlbumData();
 
     }, []);
 
-    // const settings = {
-    //     dots: false,
-    //     infinite: false,
-    //     speed: 500,
-    //     slidesToShow: 7,
-    //     slidesToScroll: 1
-    //   };
-
     return (
-        <div className={styles.container}>
-            <AlbumSectionHeader />
+        <div className={styles.albumDiv}>
 
-            <div className={styles.temp}>
+            <AlbumSectionHeader>Top Albums</AlbumSectionHeader>
+            <GridOfCards album={newAlbum}/>
 
-                {album.map((albumItem) => (
-                    <Card 
-                        key={albumItem.id}
-                        imgLink={albumItem.image} 
-                        numberFollows={albumItem.follows} 
-                        genreName={albumItem.title} 
-                    />
-                ))}
-
-            </div>
+            <AlbumSectionHeader>New Albums</AlbumSectionHeader>
+            <GridOfCards album={topAlbum}/>
 
         </div>
     );

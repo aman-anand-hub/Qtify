@@ -2,17 +2,17 @@
 
 .cardContainer {
     height: 232px;
-    width: 170px;
+    width: 159px;
 }
 
 .wrapper {
     height: 205px;
-    width: 170px;
+    width: 159px;
 }
 
 .cardImage {
     height: 170px;
-    width: 170px;
+    width: 159px;
 }
 
 .cardImage img {
@@ -24,7 +24,7 @@
 
 .followSection {
     height: 35px;
-    width: 170px;
+    width: 159px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     display: flex;
@@ -36,7 +36,7 @@
 
 .followTem {
     height: 23px;
-    width: max-content;
+    width: fit-content;
     border-radius: 10px;
     padding: 4px 8px 4px 8px;
     background-color: var(--color--black);

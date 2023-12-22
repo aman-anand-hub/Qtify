@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Card.module.css";
 
-function Card({imgLink, numberFollows, genreName}) {
+function Card({imgLink, number, genreName, albumCard}) {
     return (
         <div className={styles.cardContainer}>
 
@@ -13,7 +13,11 @@ function Card({imgLink, numberFollows, genreName}) {
 
                 <div className={styles.followSection}>
                     <div className={styles.followTem}>
-                        <p className={styles.followText}>{numberFollows} Follows</p>
+                        <p className={styles.followText}>{number}
+                        {
+                            albumCard ? (" Follows") : (" Likes")
+                        }
+                        </p>
                     </div>
                 </div>
 

@@ -1,15 +1,12 @@
 import React from "react";
 import styles from "./AlbumSectionHeader.module.css";
 
-function AlbumSectionHeader() {
+function AlbumSectionHeader({ children }) {
     return (
         <div className={styles.heading}>
-            <div className={styles.headingdiv}>
-                <p className={styles.heading1}>Top Albums</p>
-            </div>
-            <div className={styles.headingdiv}>
-                <p className={styles.heading2}>Show all</p>
-            </div>
+                <span className={styles.heading1}>{children}</span>
+
+                <span className={styles.heading2}>Show all</span>
         </div>
     )
 }
