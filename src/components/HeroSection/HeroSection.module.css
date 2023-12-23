@@ -7,3 +7,24 @@
     justify-content: center;
     align-items: center;
 }
+
+.heroTextDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: max-content;
+}
+
+.heroTextDiv p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    color: var(--color--white);
+}
+
+.hero img{
+    height: 212px;
+    width: 212px;
+}
