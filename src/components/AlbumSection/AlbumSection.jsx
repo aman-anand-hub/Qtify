@@ -6,16 +6,19 @@
 // https://qtify-backend-labs.crio.do/faq
 // https://qtify-backend-labs.crio.do/genres
 
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import styles from "./AlbumSection.module.css";
 import AlbumSectionHeader from "../AlbumSectionHeader/AlbumSectionHeader.jsx";
 import GridOfCards from "../GridOfCards/GridOfCards.jsx";
+import Carousel from "../Carousel/Carousel.jsx";
 
 
 function AlbumSection() {
 
     const [newAlbum, setNewAlbum]= useState([]);
     const [topAlbum, setTopAlbum]= useState([]);
+    const [showAllTopAlbum, setShowAllTopAlbum]= useState(true);
+    const [showAllNewAlbum, setShowAllNewAlbum]= useState(true);
 
     useEffect(() => {
         const fetchNewAlbumData = async () => {
@@ -25,7 +28,7 @@ function AlbumSection() {
                 console.log(request);
                 setNewAlbum(request);
             } catch (error) {
-                console.log("Error fetching the albums", error); // Corrected error logging
+                console.log("Error fetching the albums", error);
             }
         }
 
@@ -45,14 +48,53 @@ function AlbumSection() {
 
     }, []);
 
+    const handleOnClick1= () =>{
+        setShowAllTopAlbum((prevValue) => !prevValue);
+    }
+
+    const handleOnClick2= () =>{
+        setShowAllNewAlbum((prevValue) => !prevValue);
+    }
+
     return (
         <div className={styles.albumDiv}>
 
-            <AlbumSectionHeader>Top Albums</AlbumSectionHeader>
-            <GridOfCards album={newAlbum}/>
-
-            <AlbumSectionHeader>New Albums</AlbumSectionHeader>
-            <GridOfCards album={topAlbum}/>
+            {/* top album header rendering */}
+            {
+                showAllTopAlbum ? 
+                (
+                    <AlbumSectionHeader handleOnClick={handleOnClick1} param={true}>Top Albums
+                    </AlbumSectionHeader>
+                ) : 
+                (
+                    <AlbumSectionHeader handleOnClick={handleOnClick1}
+                     param={false}>Top Albums</AlbumSectionHeader>
+                )
+            }
+            {/* album rendering */}
+            {
+                showAllTopAlbum ? 
+                (<Carousel album={newAlbum}/>) : 
+                (<GridOfCards album={newAlbum}/>)
+            }
+            
+            {/* new album header rendering */}
+            {
+                showAllNewAlbum ? 
+                (
+                    <AlbumSectionHeader handleOnClick={handleOnClick2} param={true}>New Albums</AlbumSectionHeader>
+                ) : 
+                (
+                    <AlbumSectionHeader handleOnClick={handleOnClick2}
+                     param={false}>New Albums</AlbumSectionHeader>
+                )
+            }
+            {/* album rendering */}
+            {
+                showAllNewAlbum ? 
+                (<Carousel album={topAlbum}/>) : 
+                (<GridOfCards album={topAlbum}/>)
+            }
 
         </div>
     );
