@@ -1,0 +1,47 @@
+.customAccordion {
+    background-color: var(--color--black) !important;
+    width: 75%; 
+    min-height: 68px; 
+    height: max-content;
+    margin-bottom: 1.5rem;
+    border-radius: 10px !important;
+    border: 2px solid var(--color--white);
+}
+  
+.summary {
+    background-color: var(--color--white); 
+    min-height: 68px;
+}
+
+.arrowIcon {
+    font-size: 2.5rem !important;
+    color: var(--color--primary);
+    margin-top: 10px;
+}
+  
+.summaryText {
+    font-family: "Poppins" !important; 
+    font-weight: 500 !important;
+    font-size: 20px !important;
+    color: var(--color--white) !important;
+    text-align: center !important;
+    padding-top: 5px !important;
+}
+  
+.details {
+  background-color: #eee;
+  font-family: "Poppins" !important;
+  font-weight: 500 !important;
+  min-height: 68px;
+  height: max-content;
+  align-items: center !important;
+}
+
+  .detailsText {
+    color: #333;
+    color: var(--color--black);
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    padding-top: 20px;
+  }
+  

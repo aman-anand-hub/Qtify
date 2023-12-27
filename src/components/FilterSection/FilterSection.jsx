@@ -79,7 +79,7 @@ function FilterSection({album}) {
           sx={{
             '& .MuiTabs-flexContainer': {
               '& button': {
-                color: 'var(--color--white)', // Change text color to white
+                color: 'var(--color--white)', 
                 fontSize: "16px",
                 fontFamily: "Poppins",
                 fontWeight:"600" 
