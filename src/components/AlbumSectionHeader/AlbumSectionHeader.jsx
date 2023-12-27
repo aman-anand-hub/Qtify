@@ -1,28 +1,36 @@
 import React from "react";
 import styles from "./AlbumSectionHeader.module.css";
 
-function AlbumSectionHeader({ children, handleOnClick, param}) {
+function AlbumSectionHeader({ children, handleOnClick, param, albumHeader}) {
 
     return (
         <div className={styles.heading}>
 
             <span className={styles.heading1}>{children}</span>
-
-            {
-                param ? 
+            {   albumHeader ? 
+                (   <>
+                    {
+                        param ? 
+                        (
+                            <span 
+                            className={styles.heading2}
+                            onClick={handleOnClick}
+                            >
+                            Show All
+                            </span>
+                        ):
+                        (
+                        <span className={styles.heading2} onClick={handleOnClick}>
+                        Collapse
+                        </span>
+                        )
+                    }
+                    </>
+                ) :
                 (
-                    <span 
-                    className={styles.heading2}
-                    onClick={handleOnClick}
-                    >
-                    Show All
-                    </span>
-                ):
-                (
-                    <span className={styles.heading2} onClick={handleOnClick}>
-                    Collapse
-                    </span>
+                    <></>
                 )
+                
             }
 
         </div>

@@ -14,3 +14,20 @@
     padding: 16px 31px 0px 31px;
     gap: 32px;
 }
+
+.songSection {
+    width: 100%;
+    height: max-content;
+    border: 1px solid var(--color--primary);
+    border-left: none;
+    border-right: none;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 16px 16px 20px 4px;
+}
+
+.filterWrapper {
+    width: 100%;
+    height: max-content;
+    padding-left: 32px;
+}

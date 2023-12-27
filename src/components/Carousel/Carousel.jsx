@@ -18,14 +18,14 @@ const Controls= ({album}) => {
     return <></>
 }
 
-function Carousel ({album}) {
+function Carousel ({album, cardType}) {
   return (
     <div className={styles.wrapper}>
         <Swiper
           modules={{ Navigation }}
           spaceBetween={40}
           slidesPerView={6}
-          style={{padding: "20px 20px"}}
+          style={{padding: "20px 30px"}}
           initialSlide={0}
           allowTouchMove
         >  
@@ -36,13 +36,29 @@ function Carousel ({album}) {
 
             {album.map((albumItem) => (
                 <SwiperSlide>
-                    <Card 
-                    key={albumItem.id}
-                    imgLink={albumItem.image} 
-                    number={albumItem.follows} 
-                    genreName={albumItem.title}
-                    albumCard
-                    />
+                  {
+                    cardType ? 
+                    (
+                      <Card 
+                      key={albumItem.id}
+                      imgLink={albumItem.image} 
+                      number={albumItem.follows} 
+                      genreName={albumItem.title}
+                      numberSongs={albumItem.songs.length}
+                      cardType={cardType}
+                      />
+                    ) :
+                    (
+                      <Card
+                      key={albumItem.id}
+                      imgLink={albumItem.image}
+                      number={albumItem.likes}
+                      genreName={albumItem.title}
+                      numberSongs={""}
+                      cardType={cardType}
+                      />
+                    )
+                  }
                 </SwiperSlide>
             ))}
 

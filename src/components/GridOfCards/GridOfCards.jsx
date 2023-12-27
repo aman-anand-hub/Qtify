@@ -2,7 +2,7 @@ import React from 'react'
 import styles from "./GridOfCards.module.css";
 import Card from "../Card/Card.jsx";
 
-function GridOfCards({album}) {
+function GridOfCards({album, cardType}) {
   return (
     <div className={styles.newAlbumContainer}>
 
@@ -12,7 +12,8 @@ function GridOfCards({album}) {
                 imgLink={albumItem.image} 
                 number={albumItem.follows} 
                 genreName={albumItem.title}
-                albumCard
+                numberSongs={albumItem.songs.length}
+                cardType={true}
             />
         ))}
 
